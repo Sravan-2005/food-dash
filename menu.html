@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="menu.css">
-    <script src="menu.js"></script>
 </head>
 
 <body>
@@ -19,18 +18,23 @@
     </div>
     <br><br>
     <div class="bar">
-        <div class="left">
-        <p><span>0</span> meals found</p>
+        <div id="left">
+        </div>
+        <div class="right">
+            <label>Sort by: </label>
+            <select class="dropDown">
+                <option>Default</option>
+                <option>Name: A-Z</option>
+                <option>Name: Z-A</option>
+            </select>
+        </div>
     </div>
-    <div class="right">
-        <label>Sort by: </label>
-        <select class="dropDown">
-            <option>Default</option>
-            <option>Name: A-Z</option>
-            <option>Name: Z-A</option>
-        </select>
-    </div>
-    </div>
+    <br>
+    <br>
+    <div id="food_cards"></div>
+    <br><br>
+    <button id="loadMoreBtn">Load More Meals</button>
+    <script src="menu.js"></script>
 </body>
 
 </html>
