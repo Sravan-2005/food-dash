@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100vw;
+    background-color: #f8fafc;
 }
 .categories{
     /* background-color: aqua; */
@@ -91,4 +92,70 @@ body{
 .dropDown:hover{
     border-color:#ef4646;
     color: #ef4444;
+}
+#food_cards{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1rem;
+}
+.food_card{
+    border: 0.5px solid white;
+    width: 23%;
+    border-radius: 10px;
+    overflow: hidden;
+    gap: 1rem;
+    text-align: left;
+    height: 55vh;
+}
+.food_card img{
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+.food-card-matter{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+}
+.rate-addcart{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.cart-button{
+    display: flex;
+    gap: 10px;
+    border-radius:5px;
+    align-items: center;
+}
+.food-card-matter h3{
+
+}
+#loadMoreBtn{
+    color: white;
+    background-color: #ef4646;
+    padding: 10px 100px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.rate-addcart p{
+    color: #ef4646;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.cart-button p{
+    font-size: 0.8rem;
+    color: white;
+}
+.cart-button{
+    background-color: #ef4646;
+    border: 1px solid #e2e8f0;
+padding: 5px;
 }
