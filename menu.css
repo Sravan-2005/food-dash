@@ -101,15 +101,15 @@ body{
     /* justify-content: center; */
     align-items: center;
     gap: 1rem;
+    /* height: 40vh; */
 }
 .food_card{
     border: 0.5px solid white;
-    width: 23%;
+    width: 23.55%;
     border-radius: 10px;
     overflow: hidden;
     gap: 1rem;
     text-align: left;
-    height: 55vh;
 }
 .food_card img{
     width: 100%;
@@ -133,9 +133,7 @@ body{
     border-radius:5px;
     align-items: center;
 }
-.food-card-matter h3{
 
-}
 #loadMoreBtn{
     color: white;
     background-color: #ef4646;
@@ -158,4 +156,13 @@ body{
     background-color: #ef4646;
     border: 1px solid #e2e8f0;
 padding: 5px;
+}
+.footer{
+color:#97adc6 ;
+display: flex;
+border: 1px solid #97adc6 ;
+width: 100%;
+justify-content: center;
+padding: 10vh 0;
+
 }
