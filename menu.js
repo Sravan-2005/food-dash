@@ -13,7 +13,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
     cato.forEach((element) => {
       let btn = document.createElement("button");
       btn.innerText = element;
-      loadMeals('Beef');
+      // loadMeals('Beef');
 
       btn.onclick = () => {
         document.querySelectorAll("#categories_buttons button").forEach((b) => {
@@ -37,10 +37,10 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
         foodCards.innerHTML = "";
         currentIndex=0;
         limit=12;
-        // if(!data.meals){
-        //     foodCards.innerHTML = "<h2>No meals found</h2>";
-        //     return;
-        // }
+        if(!data.meals){
+            foodCards.innerHTML = "<h2>No meals found</h2>";
+            return;
+        }
         // data.meals.forEach(food => createFoodCard(food));
         allmeals=data.meals;
         loadNextMeals();
@@ -85,3 +85,24 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
     foodCards.appendChild(card);
   }
+  const searchvalue=document.getElementById("search-text");
+  searchvalue.addEventListener("input",function(){
+    let value=this.value;
+    document.querySelectorAll("#categories_buttons button").forEach((b) => {
+          b.classList.remove("active");
+        });
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
+  .then((res) => res.json())
+  .then((searchdata)=>{
+    foodCards.innerHTML = "";
+     currentIndex=0;
+    limit=12;
+    allmeals=searchdata.meals;
+    loadNextMeals();
+
+  }
+  );
+
+  })
+
+  
