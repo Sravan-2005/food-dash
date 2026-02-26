@@ -80,9 +80,9 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
             <h3>${food.strMeal}</h3>
             <div class="rate-addcart">
                 <p>$${(Math.random()*10+5).toFixed(2)}</p>
-                <button class="cart-button">
+                  <button class="cart-button" data-id="${food.idMeal}">
                     <img src="https://img.icons8.com/?size=16&id=9671&format=png&color=ffffff" alt="">
-                        <p>Add</p>
+                    <p>Add</p>
                 </button>
             </div>
         </div>
