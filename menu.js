@@ -70,6 +70,9 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
   function createFoodCard(food){
     const card = document.createElement("div");
     card.className = "food_card";
+    card.onclick = () => {
+    window.location.href = `product.html?id=${food.idMeal}`;
+};
 
     card.innerHTML = `
         <img src="${food.strMealThumb}" alt="${food.strMeal}">
