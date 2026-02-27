@@ -12,7 +12,7 @@ body{
     /* min-height: 100vh; */
 }
 
-.cart{
+.carti{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -35,11 +35,11 @@ body{
     border: 1px solid white;
     border-radius: 10px;
 }
-.cart p{
+.carti p{
     color: #77749a;
 
 }
-.cart h3{
+.carti h3{
     color: #334155;
 }
 .cart-purchase{
