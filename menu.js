@@ -67,29 +67,41 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
     currentIndex=currentIndex+limit;  
   }
   loadMoreBtn.onclick=loadNextMeals;  
-  function createFoodCard(food){
+ function createFoodCard(food){
     const card = document.createElement("div");
     card.className = "food_card";
-    card.onclick = () => {
-    window.location.href = `product.html?id=${food.idMeal}`;
-};
 
     card.innerHTML = `
-        <img src="${food.strMealThumb}" alt="${food.strMeal}">
-        <div class="food-card-matter">
+        <div class="card-click-area">
+            <img src="${food.strMealThumb}" alt="${food.strMeal}">
             <h3>${food.strMeal}</h3>
+        </div>
+
+        <div class="food-card-matter">
             <div class="rate-addcart">
                 <p>$${(Math.random()*10+5).toFixed(2)}</p>
-                  <button class="cart-button" data-id="${food.idMeal}">
-                    <img src="https://img.icons8.com/?size=16&id=9671&format=png&color=ffffff" alt="">
+
+                <button class="cart-button" data-id="${food.idMeal}">
+                    <img src="https://img.icons8.com/?size=16&id=9671&format=png&color=ffffff">
                     <p>Add</p>
                 </button>
             </div>
         </div>
     `;
 
+    // 👉 redirect only when clicking image or name
+    card.querySelector(".card-click-area").onclick = () => {
+        window.location.href = `product.html?id=${food.idMeal}`;
+    };
+
+    // 👉 stop redirect when clicking Add button
+    card.querySelector(".cart-button").onclick = (e) => {
+        e.stopPropagation();   // VERY IMPORTANT
+        alert("Added to cart 😄");
+    };
+
     foodCards.appendChild(card);
-  }
+}
   const searchvalue=document.getElementById("search-text");
   searchvalue.addEventListener("input",function(){
     let value=this.value;
